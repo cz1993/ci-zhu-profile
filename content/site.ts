@@ -41,9 +41,9 @@ export const audienceModes = {
 
 export const proof = [
   { value: "10 yrs", label: "Data + AI delivery" },
-  { value: "10–15%", label: "Cloud cost reduction" },
-  { value: "~600", label: "Legacy licenses retired" },
-  { value: "30%", label: "Faster deployment cycles" },
+  { value: "10–15%", label: "Data platform cost reduction" },
+  { value: "100+", label: "Data files processed daily" },
+  { value: "2", label: "Enterprise AI agents engineered" },
 ];
 
 export const caseStudies = [
@@ -55,7 +55,7 @@ export const caseStudies = [
     summary:
       "Led the assessment, architecture, and change program for an enterprise migration to Microsoft Fabric across five core business units.",
     outcome:
-      "Reduced Azure SQL and compute costs by 10–15% while retiring roughly 600 legacy Power BI Pro licenses.",
+      "Reduced Azure SQL and compute costs by 10–15% through platform consolidation, capacity management, and performance tuning.",
     stack: ["Fabric", "Lakehouse", "Medallion", "Power BI", "FinOps"],
   },
   {
@@ -81,15 +81,15 @@ export const caseStudies = [
     stack: ["Forecasting", "Python", "Supply Chain", "ML", "Decision Systems"],
   },
   {
-    id: "delivery",
+    id: "pipelines",
     index: "04",
-    title: "A delivery system, not a deployment script",
-    tag: "MLOps + DataOps",
+    title: "Data pipelines built for daily operating scale",
+    tag: "Data Engineering",
     summary:
-      "Scaled automated CI/CD/CT patterns for data engineering and machine-learning delivery with capacity and cost analysis built into the operating model.",
+      "Designed monitored SSIS workflows and data integration across more than 20 internal systems, vendor platforms, and channel sources.",
     outcome:
-      "Reduced deployment cycles by 30% and gave teams a repeatable path from experiment to governed production.",
-    stack: ["Azure DevOps", "CI/CD/CT", "MLOps", "DataOps", "Observability"],
+      "Automated the processing of 100+ distinct data files every day, creating reliable inputs for enterprise reporting and analytics.",
+    stack: ["SSIS", "SQL Server", "ETL", "Data Quality", "Monitoring"],
   },
 ];
 
@@ -99,7 +99,7 @@ export const experience = [
     company: "Enercare",
     role: "Senior Manager, Data Strategy & Analytics",
     detail:
-      "Leading an eight-person cross-functional team across enterprise data infrastructure, Fabric transformation, applied AI, governance, and platform economics.",
+      "Leading an eight-person cross-functional team across enterprise data infrastructure, Fabric transformation, governance, and platform economics—including two enterprise AI agents for customer-service knowledge and data-governance workflows.",
   },
   {
     years: "2017—2023",
