@@ -14,5 +14,11 @@
   },
   "images": {
     "binding": "IMAGES"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "cz1993.com",
+      "custom_domain": true
+    }
+  ]
 }

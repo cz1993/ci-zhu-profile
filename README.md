@@ -3,6 +3,8 @@
 The source for Ci Zhu's interactive personal profile: a portfolio of enterprise
 data delivery, AI engineering, open-source work, and applied academic training.
 
+**Live site:** [cz1993.com](https://cz1993.com)
+
 ## Highlights
 
 - Audience-aware profile views for recruiters, builders, and founders
