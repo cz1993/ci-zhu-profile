@@ -25,7 +25,7 @@ export default async function NotePage({ params }: Props) {
     <main className="article-page">
       <div className="noise" aria-hidden="true" />
       <article className="article-wrap">
-        <Link className="back-link" href="/notes">← ALL FIELD NOTES</Link>
+        <Link className="back-link" href="/notes">← All field notes</Link>
         <header className="article-header">
           <div className="article-meta"><span>{note.number}</span><span>{note.date}</span><span>{note.readTime}</span></div>
           <h1>{note.title}</h1><p>{note.excerpt}</p>
@@ -34,7 +34,7 @@ export default async function NotePage({ params }: Props) {
           {note.sections.map((section) => (
             <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
           ))}
-          <div className="article-cta"><span>CONTINUE THE CONVERSATION</span><a href={profile.links.linkedin} target="_blank" rel="noreferrer">CONNECT ON LINKEDIN ↗</a></div>
+          <div className="article-cta"><span>Continue the conversation</span><a href={profile.links.linkedin} target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a></div>
         </div>
       </article>
     </main>

@@ -276,6 +276,8 @@ export const currentQuests = [
 export const education = [
   {
     id: "waterloo",
+    logo: "/university-of-waterloo-logo.png",
+    logoAlt: "University of Waterloo",
     years: "2011—2015",
     school: "University of Waterloo",
     degree: "Honours Mathematics",
@@ -291,6 +293,8 @@ export const education = [
   },
   {
     id: "smith",
+    logo: "/smith-school-logo.png",
+    logoAlt: "Smith School of Business at Queen’s University",
     years: "2020—2021",
     school: "Smith School of Business",
     degree: "Master of Management in Artificial Intelligence",
