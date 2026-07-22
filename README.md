@@ -1,98 +1,64 @@
-# vinext-starter
+# Ci Zhu — Data + AI Operator
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+The source for Ci Zhu's interactive personal profile: a portfolio of enterprise
+data delivery, AI engineering, open-source work, and applied academic training.
 
-## Prerequisites
+## Highlights
 
-- Node.js `>=22.13.0`
+- Audience-aware profile views for recruiters, builders, and founders
+- Enterprise outcomes and a decade of Data + AI delivery
+- Multi-agent systems and production agent-skill engineering
+- MirrorArc open-source project and live demo
+- University of Waterloo and Smith School of Business education
+- Responsive layouts, accessible navigation, and reduced-motion support
 
-## Quick Start
+## Stack
+
+- React 19 and Next.js App Router APIs
+- [vinext](https://github.com/cloudflare/vinext) and Vite
+- Cloudflare Workers
+- TypeScript and CSS
+
+## Local development
+
+Node.js 22.13 or newer is required.
 
 ```bash
 npm install
 npm run dev
-npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+The local site runs at the URL printed by vinext, normally
+`http://localhost:3001`.
 
-## Included Shape
+## Validation
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```bash
+npm run check
+npm test
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+## Deployment
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+Authenticate Wrangler with the target Cloudflare account, then deploy:
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+```bash
+npx wrangler login
+npm run deploy
+```
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+The Worker configuration is committed in `wrangler.jsonc`. Production domains
+can be attached in Cloudflare under **Workers & Pages → ci-zhu-profile →
+Settings → Domains & Routes**.
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+## Content management
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+Most profile content is centralized in `content/site.ts`. Page structure and
+interactions live in `app/profile-shell.tsx`, with the visual system in
+`app/globals.css`.
 
-## Useful Commands
+## License
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+All rights reserved. The source is public for portfolio review and learning;
+reuse of Ci Zhu's personal content, portrait, or institutional branding is not
+granted.
