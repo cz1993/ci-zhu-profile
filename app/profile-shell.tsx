@@ -113,7 +113,7 @@ export function ProfileShell() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-grid" onPointerMove={trackPointer} onPointerLeave={resetPointer}>
+        <div className="hero-grid">
           <div className="hero-copy" data-reveal>
             <p className="kicker"><span className="live-dot" /> Based in {profile.location} <span>•</span> System online</p>
             <div className="display-wrap">
@@ -129,9 +129,7 @@ export function ProfileShell() {
 
           <div className="hero-visual" data-reveal>
             <figure className="portrait-panel">
-              <div className="portrait-orbit" aria-hidden="true"><span /><i /></div>
               <img src="/ci-zhu-portrait.jpeg" alt="Portrait of Ci Zhu" />
-              <div className="portrait-scan" aria-hidden="true" />
               <figcaption><span>Operator / 01</span><strong>Ci Zhu</strong><small>Data + AI systems</small></figcaption>
             </figure>
 
