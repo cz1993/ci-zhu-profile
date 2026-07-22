@@ -19,6 +19,16 @@ import {
 
 type Audience = keyof typeof audienceModes;
 
+const tickerItems = [
+  "Multi-agent systems",
+  "Agent skills",
+  "Applied AI",
+  "Microsoft Fabric",
+  "Optimization",
+  "Knowledge systems",
+  "Reinforcement learning",
+];
+
 function trackPointer(event: ReactPointerEvent<HTMLElement>) {
   const bounds = event.currentTarget.getBoundingClientRect();
   const x = (event.clientX - bounds.left) / bounds.width - 0.5;
@@ -171,7 +181,13 @@ export function ProfileShell() {
       </section>
 
       <div className="ticker" aria-hidden="true">
-        <div>Multi-agent systems ✦ Agent skills ✦ Applied AI ✦ Microsoft Fabric ✦ Optimization ✦ Knowledge systems ✦ Reinforcement learning ✦ Multi-agent systems ✦ Agent skills ✦ Applied AI ✦</div>
+        <div className="ticker-track">
+          {[0, 1].map((copy) => (
+            <div className="ticker-sequence" key={copy}>
+              {tickerItems.map((item) => <span key={`${copy}-${item}`}>{item}</span>)}
+            </div>
+          ))}
+        </div>
       </div>
 
       <section className="section work-section" id="work">

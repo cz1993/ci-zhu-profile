@@ -89,7 +89,10 @@ button { font: inherit; }
 .proof-item small { margin-top: 8px; font: 600 10px var(--font-mono); letter-spacing: .03em; }
 
 .ticker { background: var(--acid); border-block: var(--line); overflow: hidden; transform: rotate(-1deg) scale(1.02); position: relative; z-index: 2; }
-.ticker div { width: max-content; padding: 13px 0; font: 800 14px var(--font-mono); animation: ticker 28s linear infinite; }
+.ticker-track { display: flex; width: max-content; will-change: transform; animation: ticker 28s linear infinite; }
+.ticker-sequence { display: flex; flex: 0 0 auto; align-items: center; padding: 13px 0; }
+.ticker-sequence span { flex: 0 0 auto; white-space: nowrap; font: 800 14px var(--font-mono); }
+.ticker-sequence span::after { content: "✦"; display: inline-block; margin: 0 1em; }
 
 .section { padding: 120px 4vw; }
 .work-section, .ai-section, .now-section { background: var(--paper); }
@@ -274,7 +277,7 @@ footer > div:last-child { display: flex; gap: 18px; justify-content: end; }
 .motion-card:hover { box-shadow: 10px 12px 0 var(--ink); }
 .motion-card > * { transform: translateZ(16px); }
 
-@keyframes ticker { to { transform: translateX(-50%); } }
+@keyframes ticker { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 @keyframes pulse { 50% { opacity: .45; } }
 @keyframes panel-in { from { opacity: .25; transform: translateY(8px); } }
 
