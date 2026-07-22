@@ -42,8 +42,8 @@ export const audienceModes = {
 export const proof = [
   { value: "10 yrs", label: "Data + AI delivery" },
   { value: "10–15%", label: "Data platform cost reduction" },
-  { value: "100+", label: "Data files processed daily" },
-  { value: "2", label: "Enterprise AI agents engineered" },
+  { value: "25+", label: "Source systems integrated" },
+  { value: "10+", label: "Production agent skills developed" },
 ];
 
 export const caseStudies = [
@@ -81,15 +81,15 @@ export const caseStudies = [
     stack: ["Forecasting", "Python", "Supply Chain", "ML", "Decision Systems"],
   },
   {
-    id: "pipelines",
+    id: "integrations",
     index: "04",
-    title: "Data pipelines built for daily operating scale",
-    tag: "Data Engineering",
+    title: "Integration across the enterprise data estate",
+    tag: "Data Integration",
     summary:
-      "Designed monitored SSIS workflows and data integration across more than 20 internal systems, vendor platforms, and channel sources.",
+      "Integrated 25+ source systems across ERP, CRM, commerce, payments, logistics, vendors, and channels—including Salesforce, SAP, Magento, Shopify, Zuora, Stripe, IFS, and Samsara.",
     outcome:
-      "Automated the processing of 100+ distinct data files every day, creating reliable inputs for enterprise reporting and analytics.",
-    stack: ["SSIS", "SQL Server", "ETL", "Data Quality", "Monitoring"],
+      "Built the pipelines, models, and monitoring that turned heterogeneous operational data into reliable inputs for reporting, analytics, and AI.",
+    stack: ["ERP + CRM", "Commerce", "Payments", "Logistics", "Data Integration"],
   },
 ];
 
@@ -99,7 +99,7 @@ export const experience = [
     company: "Enercare",
     role: "Senior Manager, Data Strategy & Analytics",
     detail:
-      "Leading an eight-person cross-functional team across enterprise data infrastructure, Fabric transformation, governance, and platform economics—including two enterprise AI agents for customer-service knowledge and data-governance workflows.",
+      "Leading an eight-person cross-functional team across enterprise data infrastructure, Fabric transformation, applied AI, governance, and platform economics.",
   },
   {
     years: "2017—2023",
@@ -146,10 +146,10 @@ export const aiEngineering = [
     index: "A—02",
     title: "Agent skill engineering",
     summary:
-      "I turn expert workflows into reusable capabilities that agents can discover, execute, validate, and improve consistently.",
+      "I have developed 10+ production agent skills that turn expert data and cloud workflows into reusable, discoverable capabilities.",
     detail:
-      "A strong skill is more than a prompt: it carries trigger rules, progressive context, scripts, templates, validation gates, safe fallbacks, and a clear contract for when human judgment is required.",
-    tags: ["Skill design", "Progressive context", "Validation", "Reusable workflows"],
+      "Examples include database assessment, data-lineage and dependency scanning, and Azure cost intelligence—with explicit trigger rules, progressive context, validation gates, and safe fallbacks.",
+    tags: ["DB assessment", "Lineage scanning", "Azure cost intelligence", "Skill design"],
   },
   {
     index: "A—03",
