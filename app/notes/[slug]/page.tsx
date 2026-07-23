@@ -13,7 +13,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const note = notes.find((item) => item.slug === slug);
   if (!note) return {};
-  return { title: note.title, description: note.excerpt };
+  const pathname = `/notes/${note.slug}`;
+  return {
+    title: note.title,
+    description: note.excerpt,
+    alternates: { canonical: pathname },
+    openGraph: {
+      title: note.title,
+      description: note.excerpt,
+      url: pathname,
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Ci Zhu — Build systems. Ship intelligence." }],
+    },
+  };
 }
 
 export default async function NotePage({ params }: Props) {

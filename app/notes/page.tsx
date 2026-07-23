@@ -5,6 +5,13 @@ import { notes } from "@/content/site";
 export const metadata: Metadata = {
   title: "Field Notes",
   description: "Notes from Ci Zhu on enterprise AI, data platforms, knowledge systems, and operating craft.",
+  alternates: { canonical: "/notes" },
+  openGraph: {
+    title: "Field Notes — Ci Zhu",
+    description: "Notes from Ci Zhu on enterprise AI, data platforms, knowledge systems, and operating craft.",
+    url: "/notes",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Ci Zhu — Build systems. Ship intelligence." }],
+  },
 };
 
 export default function NotesPage() {

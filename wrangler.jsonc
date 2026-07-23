@@ -17,7 +17,19 @@
   },
   "routes": [
     {
+      "pattern": "ci-zhu.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.ci-zhu.com",
+      "custom_domain": true
+    },
+    {
       "pattern": "cz1993.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.cz1993.com",
       "custom_domain": true
     }
   ]

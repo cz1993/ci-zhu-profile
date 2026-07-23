@@ -2,6 +2,13 @@
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 
+const PRIMARY_HOSTNAME = "ci-zhu.com";
+const REDIRECT_HOSTNAMES = new Set([
+  "www.ci-zhu.com",
+  "cz1993.com",
+  "www.cz1993.com",
+]);
+
 interface Env {
   ASSETS: Fetcher;
   DB: D1Database;
@@ -28,6 +35,19 @@ interface ExecutionContext {
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+
+    if (REDIRECT_HOSTNAMES.has(url.hostname)) {
+      url.protocol = "https:";
+      url.host = PRIMARY_HOSTNAME;
+
+      return new Response(null, {
+        status: 308,
+        headers: {
+          "Cache-Control": "public, max-age=3600",
+          Location: url.toString(),
+        },
+      });
+    }
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];

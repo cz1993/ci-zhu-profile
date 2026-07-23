@@ -3,7 +3,11 @@
 The source for Ci Zhu's interactive personal profile: a portfolio of enterprise
 data delivery, AI engineering, open-source work, and applied academic training.
 
-**Live site:** [cz1993.com](https://cz1993.com)
+**Live site:** [ci-zhu.com](https://ci-zhu.com)
+
+`cz1993.com` remains active as a permanent, path-preserving redirect so existing
+links continue to work while traffic and analytics converge on the canonical
+domain.
 
 ## Highlights
 
@@ -49,9 +53,9 @@ npx wrangler login
 npm run deploy
 ```
 
-The Worker configuration is committed in `wrangler.jsonc`. Production domains
-can be attached in Cloudflare under **Workers & Pages → ci-zhu-profile →
-Settings → Domains & Routes**.
+The Worker configuration is committed in `wrangler.jsonc`. `ci-zhu.com` is the
+canonical production domain; its `www` hostname and the legacy `cz1993.com`
+hostnames redirect to it before rendering.
 
 ## Content management
 
